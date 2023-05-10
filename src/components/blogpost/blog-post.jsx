@@ -1,31 +1,28 @@
+import { Fragment } from "react";
 import Container from "@mui/material/Container";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+import YouTubePlayer from "../youtube/youtube-player";
 
 const BlogPost = () => {
   return (
-    <Container
-      maxWidth="lx"
-      sx={{ marginTop: 8, backgroundColor: "lightgray" }}
-    >
-      <Grid container spacing={2}>
-        <Grid item xs={8}>
-          <Item>Sample 1</Item>
+    <Fragment>
+      <Container maxWidth="xl" sx={{ marginTop: 8 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={8}>
+            <Paper
+              sx={{ height: "100%", display: { xs: "none", md: "block" } }}
+            >
+              <YouTubePlayer videoLink="https://www.youtube.com/watch?v=uYMGtCRAxwQ" />
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <h1>News Feeds</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Item>News Feeds</Item>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </Fragment>
   );
 };
 
