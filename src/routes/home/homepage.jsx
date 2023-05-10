@@ -1,9 +1,7 @@
+import BlogPost from "../../components/blogpost/blog-post";
+//import FlexBoxLayout from "../../components/flexbox/flexbox";
 const HomePage = () => {
-  return (
-    <div>
-      <h1>This is the Home page of the website</h1>
-    </div>
-  );
+  return <BlogPost />;
 };
 
 export default HomePage;
